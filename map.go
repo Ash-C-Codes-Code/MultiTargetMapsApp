@@ -6,21 +6,21 @@
 
 package main
 
-import {
-	"bytes"
-	"encoding/json"
-	"fmt"
-	"io"
+import (
+	"fmt" 
+	// "bytes"
+	// "encoding/json"
+	// "io"
 	"net/http"
-	"errors"
+	// "errors"
 	"os"
-	"time"
-}
+	// "time"
+)
 
 const serverPort = 3333
 
 func main() {
-	requestURL := fmt.Sprintf("", serverPort)
+	requestURL := fmt.Sprintf("http://router.project-osrm.org/route/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219?overview=false", serverPort)
 	res, err := http.Get(requestURL)
 	if err != nil {
 		fmt.Printf("error making http request: %s\n", err)
